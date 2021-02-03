@@ -1,9 +1,5 @@
-- Date Object
-- Comparison & Logical Operator ---> Menghasilkan Nilai Boolean (True/False Saja)
-    - Comparison : >, >=, <, <=, ==, ===, !=
-    - Logical : && (AND), || (OR), !(NOT)
-- Conditional Statement
-    - IF
-    - IF ELSE
-    - IF, ELSE IF, ELSE
-    - SWITCH CASE
+- Looping Statement
+    - While
+    - Do While
+    - For
+    - Nested Loop (Loop Inside Loop)

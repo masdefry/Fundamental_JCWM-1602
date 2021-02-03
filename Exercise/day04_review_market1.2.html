@@ -1,0 +1,71 @@
+<script>
+    // Identifikasi data : Product, Harga, Stock, Qty, Nominal Bayar
+    // Step :
+    //      1. Menerima inputan qty dari user
+    //          - Apabila qty > stock, maka qty = stock
+    //      2. Cari total per-product
+    //      3. Jumlahkan seluruh total belanja
+    //      4. Nerima inputan nominal bayar dari user
+    //          - Apabila nominal < total belanja ---> Transaksi batal
+    //          - Apabila nominal >= total belanja ---> Transaksi berhasil
+    
+    let product1 = 'Apel'
+    let product2 = 'Anggur'
+    let product3 = 'Jeruk'
+
+    let stockProduct1 = 10
+    let stockProduct2 = 20
+    let stockProduct3 = 30
+
+    let hargaProduct1 = 10000
+    let hargaProduct2 = 15000
+    let hargaProduct3 = 20000
+
+    let quantityProduct1 = prompt(`Mau beli ${product1} berapa? \n *Harga per-kilonya = ${hargaProduct1.toLocaleString()}`)
+    if(quantityProduct1 > stockProduct1){
+        quantityProduct1 = stockProduct1
+        alert(`Jumlah qty melebihi stock. Stock = ${stockProduct1}`)
+    }
+
+    let quantityProduct2 = prompt(`Mau beli ${product2} berapa? \n *Harga per-kilonya = ${hargaProduct2.toLocaleString()}`)
+    if(quantityProduct2 > stockProduct2){
+        quantityProduct2 = stockProduct2
+        alert(`Jumlah qty melebihi stock. Stock = ${stockProduct2}`)
+    }
+    
+    let quantityProduct3 = prompt(`Mau beli ${product3} berapa? \n *Harga per-kilonya = ${hargaProduct3.toLocaleString()}`)
+    if(quantityProduct3 > stockProduct3){
+        quantityProduct3 = stockProduct3
+        alert(`Jumlah qty melebihi stock. Stock = ${stockProduct3}`)
+    }
+
+    let totalProduct1 = quantityProduct1 * hargaProduct1
+    let totalProduct2 = quantityProduct2 * hargaProduct2
+    let totalProduct3 = quantityProduct3 * hargaProduct3
+
+    let grandTotal = totalProduct1 + totalProduct2 + totalProduct3
+
+    alert(
+        `
+            DAFTAR BELANJA \n\n
+            ${product1} : Rp. ${hargaProduct1} x ${quantityProduct1} = ${totalProduct1.toLocaleString()} \n
+            ${product2} : Rp. ${hargaProduct2} x ${quantityProduct2} = ${totalProduct2.toLocaleString()} \n
+            ${product3} : Rp. ${hargaProduct3} x ${quantityProduct3} = ${totalProduct3.toLocaleString()} \n
+            TOTAL BELANJA : Rp ${grandTotal}
+        `
+    )
+
+    let pembayaran = prompt('Masukan jumlah uang pembayaran anda \n Uang dalam rupiah')
+
+    let kembalian = pembayaran - grandTotal
+
+    if(kembalian < 0){
+        alert('Transaksi dibatalkan')
+    }else if(kembalian == 0){
+        alert('Selamat transaksi berhasil')
+    }else if(kembalian > 0){
+        alert(`Selamat transaksi berhasil. Kembalian anda ${kembalian}`)
+    }else{
+        alert('Inputan anda tidak sesuai! Transaksi dibatalkan')
+    }
+</script>
