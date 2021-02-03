@@ -1,5 +1,4 @@
-- Looping Statement
-    - While
-    - Do While
-    - For
-    - Nested Loop (Loop Inside Loop)
+- Array
+    - Cara CRUD (Create, Read, Update, Delete)
+    - Method
+    - Array 2 Dimensi

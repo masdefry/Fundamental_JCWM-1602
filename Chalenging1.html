@@ -1,43 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day-04 : Chalenging 1</title>
-</head>
-<body>
-    <script>
-        // [KALKULATOR SEDERHANA]
-        // Identifikasi Parameter : Angka1, Angka2, Operator, Hasil Perhitungan 
+<script>
+    // Aplikasi Menghitung Tarif Parkir
+    //      - Jam Keluar < Jam Masuk ---> User input terus menerus
+    //      - Biaya :
+    //          - 4 jam pertama : Tarif 3000 flat
+    //          - Setelah 4 jam : Tarif 1000 /jam
 
-        // Step :
-        //      1. Bikin prompt angka1, angka2, operator
-        let angka1, angka2, operator, hasil
+    // Identifikasi parameter : Jam masuk, jam keluar, durasi parkir, tarif awal, tarif selanjutnya,
+    //                          tarif total
+    // Durasi parkir : Jam keluar - jam masuk
+    // Tarif total :
+    //      - <= 4 jam : Tarif Awal
+    //      - > 4 jam : Tarif Awal + ((Durasi parkir - 4) * Tarif selanjutnya) // 6 Jam
 
-        angka1 = Number(prompt('Masukan Angka 1'))
-        angka2 = Number(prompt('Masukan Angka 2'))
-        operator = prompt('Masukan Operator : +, -, *, /')
+    let jamMasuk, jamKeluar, durasiParkir, tarif1, tarif2, tarifTotal
 
-        //      2. Hitung angka1 dan angka2 sesuai dengan operator inputan
-        if(operator == '+'){
-            hasil = angka1 + angka2
-            // alert
-        }else if(operator == '-'){
-            hasil = angka1 - angka2
-        }else if(operator == '*'){
-            hasil = angka1 * angka2
-        }else if(operator == '/'){
-            hasil = angka1 / angka2
-        }else{
-            hasil = undefined
-        }
+    tarif1 = 3000
+    tarif2 = 1000
 
-        //      3. Tampilkan hasil perhitungan menggunakan alert
-        if(hasil === undefined){
-            alert(`Inputan Tidak Sesuai`)
-        }else{
-            alert(`Hasil Perhitungan : ${angka1} ${operator} ${angka2} = ${hasil}`)
-        }
-    </script>
-</body>
-</html>
+    jamMasuk = Number(prompt('Jam Masuk Parkir :'))
+    do{
+        jamKeluar = Number(prompt('Jam Keluar Parkir :'))
+    }while(jamKeluar < jamMasuk)
+
+    durasiParkir = jamKeluar - jamMasuk
+
+    if(durasiParkir <= 4){
+        tarifTotal = tarif1
+    }else{
+        tarifTotal = tarif1 + ((durasiParkir - 4) * tarif2)
+    }
+
+    alert(`Anda Parkir Selama ${durasiParkir} Jam ---> Tarif = Rp. ${tarifTotal}`)
+</script>
