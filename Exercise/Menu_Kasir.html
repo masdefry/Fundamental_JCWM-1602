@@ -1,0 +1,64 @@
+<script>
+    let product = ['Apel', 'Jeruk', 'Anggur']
+    let harga = [10000, 15000, 20000]
+    let stock = [10, 15, 20]
+
+    let menuKasir
+
+    do{
+        menuKasir = prompt(`
+            PURWADHIKA MART \n
+            --------------- \n
+            Pilih Menu Kasir : \n
+            1. Lihat Product \n
+            2. Tambah Product \n
+            3. Delete Product \n
+            4. Kembali
+        `)
+
+        if(menuKasir == 1){
+            // ********** Menu 1 : Menampilkan data product **********
+            let printDataProduct = ''
+
+            for(let i = 0; i < product.length; i++){
+                printDataProduct += `${i+1}. ${product[i]} : Rp. ${harga[i]} (Stock ${stock[i]}Kg \n`
+            }
+
+            alert(printDataProduct)
+        }else if(menuKasir == 2){
+            // ********** Menu 2 : Tambah Data **********
+            let tambahProduct = prompt(`TAMBAH PRODUCT \n Masukan Nama Product :`) // Semangka
+            product.push(tambahProduct)
+
+            let tambahHarga = prompt(`TAMBAH PRODUCT \n Masukan Harga Product :`)
+            harga.push(tambahHarga)
+
+            let tambahStock = prompt(`TAMBAH PRODUCT \n Masukan Stock Product :`)
+            stock.push(tambahStock)
+        }else if(menuKasir == 3){
+            // ********** Menu 3 : Delete Data **********
+            let printDataProduct = ''
+            for(let i = 0; i < product.length; i++){
+                printDataProduct += `${i+1}. ${product[i]} : Rp. ${harga[i]} (Stock ${stock[i]}Kg \n`
+            }
+
+            let checkValidation = false
+            do{
+                let productSelected = prompt(`
+                    HAPUS PRODUCT \n
+                    ${printDataProduct} \n
+                    Pilih Nomor Product Yang Akan Dihapus :
+                `)
+
+                if(productSelected > 0 && (productSelected-1 < product.length)){
+                    product.splice(productSelected-1, 1)
+                    harga.splice(productSelected-1, 1)
+                    stock.splice(productSelected-1, 1)
+                    alert('Data Berhasil Dihapus!')
+
+                    checkValidation = true
+                }
+            }while(checkValidation == false)
+        }
+    }while(menuKasir != 4)
+</script>
