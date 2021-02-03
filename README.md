@@ -1,23 +1,23 @@
-- Cara Running Javascript 
-    - Inside Browser
-        1. <script></script>
-        2. From external file : <script src="nama_file.js"></script>
-    - Outside Browser
-        1. Node JS : Buka terminal VS Code ---> Ketikan : node nama_file.js
+- Variable
+    - var : Dapat membuat variable dengan nama yg sama lebih dari 1
+    - let : Tidak dapat membuat variable dengan nama yg sama
+    - const : Tidak dapat membuat variable dengan nama yg sama, serta valuenya tidak dapat diubah
 
-- Input Javascript
-    - Prompt (hanya running di browser)
+- Data Types
+    - Tipe Data Primitive : String, Number, Boolean, Undefined
+    - Tipe Data References : Array, Object, Date Object
 
-- Output Javascript
-    - Console (running di browser / running di terminal VS Code)
-    - Alert (hanya running di browser)
-
-- Comment ---> Diabaikan Oleh Mesin
-    - One Line Comment 
-        // ... (Ctrl + ?)
-    - Multiple Line Comment
-        */
-        ...
-        ...
-        ...
-        /*
+- Math Object
+    - Math.round : Pembulatan sesuai dengan aturan matematika
+    - Math.ceil : Berapapun nilainya, bakalan dibulatkan keatas
+    - Math.floor : Berapapun nilainya, bakalan dibulatkan kebawah
+    - Math.pow : Perpangkatan
+    - Math.sqrt : Sqrt ---> Square root (Akar 2)
+    - Math.cbrt : Cbrt ---> Cube root (Akar 3)
+    - Math.random
+    
+- Shorthand Operator / Assignment Operator
+    - =
+    - +=
+    - *=
+    - /=
