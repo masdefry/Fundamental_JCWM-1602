@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Styling CSS</title>
+    <!-- Link Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <!-- 1. Direct Styling : <style> ... </style> -->
+    <style>
+        /* CSS */
+        /* Sebelum styling, kalian harus tahu element mana yg akan di styling */
+        /* Untuk tahu element mana yg akan kita styling ---> Kita harus tahu elementnya (QUERY SELECTOR) */
+
+        /* Query Selector : Tag, Id, Class, Etc */
+        /* 1. Tag Selector */
+        h1{
+            font-family: 'Roboto Slab', serif;
+            font-size: 50px;
+            color:crimson;
+        }
+
+        p{
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            color: #252525;
+        }
+
+        button{
+            width: 300px;
+            height: 30px;
+            background-color:cornflowerblue;
+            color:white;
+        }
+
+        /* 2. Id Selector */
+        #buttonverif{
+            width: 300px;
+            height: 50px;
+            background-color: teal;
+            font-size: 30px;
+        }
+
+        #basicstyling2{
+            font-size: 50px;
+            color: tomato;
+        }
+
+        /* Class Selector */
+        .groupingparagraph{
+            font-size: 15px;
+            color: black;
+        }
+
+        body{
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic Styling CSS1</h1>
+    <h1 id="basicstyling2">Basic Styling CSS2</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum error exercitationem rerum, incidunt, beatae officia deleniti officiis, quia id quae iusto totam iure amet labore ut ipsa aliquam nobis recusandae!</p>
+    <button>Submit</button> <br><br>
+    <button id="buttonverif">Send Verification</button>
+
+    <!-- Grouping menggunakan class -->
+    <p class="groupingparagraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae quasi commodi quod reprehenderit, nobis eveniet! Eaque perferendis placeat possimus provident molestias non! Temporibus dolorum, reprehenderit suscipit facilis animi sunt iusto?</p> <br><br><br>
+    <p class="groupingparagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam est harum placeat voluptatem minus cum mollitia, incidunt aperiam expedita earum sit quisquam voluptate modi distinctio iste voluptatum temporibus similique explicabo.</p> <br><br><br>
+    <p class="groupingparagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur architecto beatae praesentium consequatur velit laborum perspiciatis autem corrupti, cupiditate minima similique voluptatum. Ea quaerat dolores laborum, itaque molestiae sed deserunt.</p> <br><br><br>
+</body>
+</html>

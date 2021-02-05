@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pow Calculator</title>
+</head>
+<body>
+    <h3>Masukan Angka</h3>
+    <input type="number" name="" id="angka" placeholder="Masukan Angka Saja">
+    <br>
+    <br>
+    <input type="button" value="Hitung Kuadrat" id="kuadrat">
+    <br>
+    <br>
+    <h3 id='hasil'></h3>
+    <script>
+        let buttonBebas = document.getElementById('kuadrat') // Ngambil element button
+
+        function onClickButton(){
+            let angka = document.getElementById('angka').value // Ngambil value inputan 
+
+            if(Number(angka) <= 0){
+                // Menyisipkan teks didalam <h3 id='hasil'><h3>
+                document.getElementById('hasil').innerHTML = `Angka Harus Bernilai Positif`
+            }else{
+                angka = Math.pow(angka, 2)
+                
+                // Menyisipkan teks didalam <h3 id='hasil'><h3>
+                document.getElementById('hasil').innerHTML = `Hasil Perhitungan Adalah ${angka}`
+            }
+        }
+
+        // Button melakukan sesuatu, yaitu menjalan function onClickButton
+        buttonBebas.addEventListener('click', onClickButton) 
+    </script>
+</body>
+</html>
