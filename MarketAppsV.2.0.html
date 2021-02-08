@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURWADHIKA MART | Your First Choice</title>
+    <style>
+        input{
+            padding: 10px;
+        }
+
+        #table-products{
+            width: 75%;
+            border: 1px solid #16c79a;
+        }
+
+        #table-products thead{
+            background-color: #16c79a;
+            font-size: 16px;
+            color: #f8f1f1;
+        }
+
+        #table-products tr, td{
+            border: 1px solid #16c79a;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Input Data</h1>
+        </legend>
+        <label>
+            Name & Price Product
+        </label>
+        <br>
+        <input type="text" name="product-name" placeholder="Product Name"> <input type="number" name="product-price" placeholder="Price">
+        <br>
+        <br>
+        <label>
+            Stock Product
+        </label>
+        <br>
+        <input type="number" name="pruduct-stock" placeholder="Stock Product">
+        <br>
+        <br>
+        <lable>
+            Image URL
+        </lable>
+        <br>
+        <input type="text" name="product-image" placeholder="Image URL">
+        <br><br>
+        <input type="button" name="button-submit" value="Submit Product">
+        <br><br>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h1>Data Products</h1>
+        </legend>
+        <table id="table-products">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Diisi dengan data kita -->
+            </tbody>
+        </table>
+    </fieldset>
+</body>
+<script src="Database.js"></script>
+<script src="Products.js"></script>
+</html>
