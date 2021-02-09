@@ -55,6 +55,7 @@ function showDataProducts(index){
                         <center>
                             <input type="button" name="button-edit" value="Edit" onClick="editProduct(${i})">
                             <input type="button" name="button-delete" value="Delete" onClick="deleteProduct(${i})">
+                            <input type="button" name="button-add-cart" value="+ Cart" onClick="addToCart(${i})">
                         </center>
                     </td>
                 </tr> 

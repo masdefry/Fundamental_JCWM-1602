@@ -21,3 +21,5 @@ let dataProducts = [
         imageURL: 'https://cf.shopee.co.id/file/a46af869b5365e11ac31d183b9df3ad9'
     }
 ]
+
+let usersCart = []
