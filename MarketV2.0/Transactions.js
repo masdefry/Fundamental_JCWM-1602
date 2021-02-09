@@ -54,13 +54,15 @@ showDataCarts()
 function addToCart(index){
     let quantityProduct = prompt('Input Quantity Item :')
 
-    usersCart.push({
-        name: dataProducts[index].name,
-        imageURL: dataProducts[index].imageURL,
-        price: dataProducts[index].price,
-        quantity: quantityProduct,
-        total: dataProducts[index].price * quantityProduct
-    })
+    usersCart.push(
+        {
+            name: dataProducts[index].name,
+            imageURL: dataProducts[index].imageURL,
+            price: dataProducts[index].price,
+            quantity: quantityProduct,
+            total: dataProducts[index].price * quantityProduct
+        }
+    )
 
     totalCarts()
     showDataCarts()
