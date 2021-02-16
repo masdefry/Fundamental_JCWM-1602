@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 2</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Fibonacci</h1>
+        </legend>
+        <input type="number" id="input-number" placeholder="Masukan Angka">
+        <br><br>
+        <input type="button" id="button-fibonacci" value="Fibonacci"> &nbsp;
+        <input type="button" id="button-ganjil" value="Ganjil"> &nbsp;
+        <input type="button" id="button-genap" value="Genap">
+        <h3 id="result">
+
+        </h3>
+    </fieldset>
+</body>
+<script>
+    let buttonFibonacci = document.getElementById('button-fibonacci')
+    buttonFibonacci.addEventListener('click', findFibonacci)
+
+    function findFibonacci(){
+        let number = document.getElementById('input-number').value
+        let result = ''
+        let arrFibonacci = []
+
+        let firstNumber = 0
+        let secondNumber = 1
+
+        for(let i=0; i < number; i++){
+            if(i == 0 || i == 1){
+                result += `${i} `
+                arrFibonacci.push(i)
+            }else{
+                let total = firstNumber + secondNumber
+
+                if(total <= number){
+                    result += `${total} `
+                    arrFibonacci.push(total)
+                    firstNumber = secondNumber
+                    secondNumber = total
+                }
+            }
+        }
+
+        document.getElementById('result').innerHTML = result
+        return arrFibonacci
+    }
+
+    let buttonGanjil = document.getElementById('button-ganjil')
+    buttonGanjil.addEventListener('click', findFibonacciGanjil)
+
+    function findFibonacciGanjil(){
+        let result = ''
+        let arrFibonacci = findFibonacci()
+        let arrFibonacciGanjil = []
+        let totalFibonacciGanjil = 0
+
+        for(let i=0; i < arrFibonacci.length; i++){
+            if(arrFibonacci[i] % 2 != 0){
+                arrFibonacciGanjil.push(arrFibonacci[i])
+                totalFibonacciGanjil += arrFibonacci[i]
+            }
+        }
+        console.log(totalFibonacciGanjil)
+        for(let i=0; i < arrFibonacciGanjil.length; i++){
+            if(i == arrFibonacciGanjil.length - 1){
+                result += `${arrFibonacciGanjil[i]} = ${totalFibonacciGanjil}`
+            }else{
+                result += `${arrFibonacciGanjil[i]} + `
+            }
+        }
+
+        document.getElementById('result').innerHTML = result
+    }
+
+    let buttonGenap = document.getElementById('button-genap')
+    buttonGenap.addEventListener('click', findFibonacciGenap)
+
+    function findFibonacciGenap(){
+        let result = ''
+        let arrFibonacci = findFibonacci()
+        let arrFibonacciGenap = []
+        let totalFibonacciGenap = 0
+
+        for(let i=0; i < arrFibonacci.length; i++){
+            if(arrFibonacci[i] % 2 == 0){
+                arrFibonacciGenap.push(arrFibonacci[i])
+                totalFibonacciGenap += arrFibonacci[i]
+            }
+        }
+        console.log(totalFibonacciGenap)
+        for(let i=0; i < arrFibonacciGenap.length; i++){
+            if(i == arrFibonacciGenap.length - 1){
+                result += `${arrFibonacciGenap[i]} = ${totalFibonacciGenap}`
+            }else{
+                result += `${arrFibonacciGenap[i]} + `
+            }
+        }
+
+        document.getElementById('result').innerHTML = result
+    }
+</script>
+</html>
