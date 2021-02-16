@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exam 1</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>
+                <h1>Pattern</h1>
+            </legend>
+            <input type="number" id="input-number" placeholder="Masukan Angka 1-4">
+            <br><br>
+            <input type="button" id="button-ganjil" value="Ganjil"> &nbsp;
+            <input type="button" id="button-huruf" value="Huruf">
+            <h3 id="result">
+
+            </h3>
+        </fieldset>
+    </body>
+    <script>
+        let getButtonGanjil = document.getElementById('button-ganjil')
+        getButtonGanjil.addEventListener('click', patternGanjil)
+
+        function patternGanjil(){
+            let number = document.getElementById('input-number').value
+            let result = ''
+            
+            if(number >= 1 && number <= 4){
+                // Pattern Ganjil
+                let lastNumber = 0
+
+                for(let i=1; i <= number; i++){
+                    for(let j=1; j <= i; j++){
+                        if(i == 1){
+                            result += `${i} `
+                            lastNumber = i
+                        }else{
+                            result += `${lastNumber + 2} `
+                            lastNumber = lastNumber + 2
+                        }
+                    }
+
+                    result += `<br>`
+                }
+
+                document.getElementById('result').innerHTML = result
+            }else{
+                alert('Masukan Angka 1-4!')
+            }
+        }
+
+        let buttonHuruf = document.getElementById('button-huruf')
+        buttonHuruf.addEventListener('click', patternHuruf)
+
+        function patternHuruf(){
+            let number = document.getElementById('input-number').value
+            let alphabets = `abcdefghijklmnopqrstuvwxyz`
+            let result = ''
+            
+            if(number >= 1 && number <= 4){
+                // Pattern Ganjil
+                let lastNumber = 0
+
+                for(let i=1; i <= number; i++){
+                    for(let j=1; j <= i; j++){
+                        if(i == 1){
+                            result += `${alphabets[i]} `
+                            lastNumber = i
+                        }else{
+                            result += `${alphabets[lastNumber + 2]} `
+                            lastNumber = lastNumber + 2
+                        }
+                    }
+
+                    result += `<br>`
+                }
+
+                document.getElementById('result').innerHTML = result
+            }else{
+                alert('Masukan Angka 1-4!')
+            }
+        }
+    </script>
+</html>
